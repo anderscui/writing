@@ -1,0 +1,17 @@
+chimp
+gorilla
+rattlesnake
+boa：蟒蛇
+copperhead
+baboon
+cobra
+macaque
+capybara：
+mammal：哺乳动物
+orangutan：猩猩
+locust：蝗虫
+vet：兽医
+
+
+psychiatry: 精神病学
+
