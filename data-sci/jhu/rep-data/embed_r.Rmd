@@ -1,0 +1,31 @@
+Title
+===========================
+
+Embedding R codes in Rmd file.
+
+Here, we're going to write some R codes.
+
+```{r}
+library(datasets)
+data(airquality)
+summary(airquality)
+```
+
+Let's make a plot of the data.
+
+```{r}
+pairs(airquality)
+```
+
+Here is a regression model of ozone on wind.
+
+```{r}
+library(stats)
+fit <- lm(Ozone ~ Wind + Solar.R + Temp, data = airquality)
+summary(fit)
+```
+
+list
+
+1. item 1
+2. item 2

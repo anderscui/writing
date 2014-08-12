@@ -1,0 +1,40 @@
+---
+title: "Learning R Markdown"
+author: "andersc"
+date: "Tuesday, August 12, 2014"
+output: html_document
+---
+
+## What is Markdown?
+
+Complete info: <http://daringfireball.net/projects/markdown>
+
+Background info: <http://daringfireball.net/2004/03/dive_into_markdown>
+
+## What is R Markdown?
+
+* R markdown is the integration of R with Markdown
+* Allows one to create documents containing "live" R code
+* A core tool in literate statistical programming
+
+* RM can be converted to standard markdown using the knitr package
+* RM -> markdown -> HTML work flow can be managed by RStudio
+* RM can be converted to slides using [slidify](http://slidify.org/) package.
+
+```{r}
+v <- vector()
+v <- append(v, c(3, 2, 1))
+print(v)
+```
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

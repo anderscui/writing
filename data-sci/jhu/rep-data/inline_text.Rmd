@@ -1,0 +1,17 @@
+---
+title: "Inline Text Computations"
+author: "andersc"
+date: "Tuesday, August 12, 2014"
+output: html_document
+---
+
+## knitr - Inline Text Computations
+
+**Introduction**
+
+```{r computetime, echo=FALSE}
+time <- format(Sys.time(), "%a %b %d %X %Y")
+rand <- rnorm(1)
+```
+
+The current tiem is `r time`. My favorite random number is `r rand`.

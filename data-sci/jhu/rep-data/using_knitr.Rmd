@@ -1,0 +1,73 @@
+---
+title: "Learning knitr"
+author: "andersc"
+date: "Tuesday, August 12, 2014"
+output: html_document
+---
+
+## Problems
+
+This is no single document to integrate data analysis with textual representations; i.e. data, code, and text are not linked.
+
+## knitr
+
+*Literate programs* are **weaved** to produce human-readable documents and **tangled** to produce machine-readable documents.
+
+**Literate programming** is a general concept, we need
+
+* a documentation language
+* a programming language
+
+The original **Sweave** system develped by Frienrich Leisch used LaTeX and R.
+
+## Pros of Literate Programming
+
+* Text and code all in one place, logical order
+
+## Cons of Literate Programming
+
+* If there are too much code in the document
+* Slow down processing of docs
+
+## knitr package
+
+* Supports RM, LaTeX, and HTML
+* Can export to PDF, HTML
+* Built right into RStudio
+
+## Good For
+
+* Manuals
+* Short/medium length technical docs
+* Tutorials
+* Reports
+* Data preprocessing docs
+
+## Not Good For
+
+* Very long research articles
+* Complex time-consuming computations
+* Docs that require precise formatting
+
+
+
+## Show R codes
+
+```{r, results='asis'}
+set.seed(1)
+x <- rnorm(100)
+mean(x)
+```
+
+## Manually Export
+
+```{r, echo=FALSE, results='hide'}
+#library(knitr)
+#setwd("")
+#knit2html("learning.Rmd")
+#browseURL("learning.html")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+

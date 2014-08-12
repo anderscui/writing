@@ -1,0 +1,23 @@
+---
+title: "Tables"
+author: "andersc"
+date: "Tuesday, August 12, 2014"
+output: html_document
+---
+
+## Introduction
+
+```{r fitmodel}
+library(datasets)
+data(airquality)
+fit <- lm(Ozone ~ Wind + Temp + Solar.R, data = airquality)
+```
+
+Here is a table of regression coefficients.
+
+```{r showtable, results='asis'}
+# install.packages("xtable")
+library(xtable)
+xt <- xtable(summary(fit))
+print(xt, type="html")
+```

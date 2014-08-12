@@ -1,0 +1,26 @@
+---
+title: "Global Options"
+author: "andersc"
+date: "Tuesday, August 12, 2014"
+output: html_document
+---
+
+## Introduction
+
+```{r setoptions, echo=FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE, results = "hide")
+```
+
+First simulate data
+```{r simulatedata, echo=TRUE}
+x <- rnorm(100); y <- x + rnorm(100, sd = 0.5)
+```
+
+Here si a scatterplot of the data.
+```{r scatterplot, fig.height=4}
+par(mar=c(5, 4, 1, 1), las=1)
+plot(x, y, main="My Simulated Data")
+```
+
+
