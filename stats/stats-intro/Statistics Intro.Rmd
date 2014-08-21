@@ -1,0 +1,103 @@
+---
+title: "Introductions to Statistics"
+author: "Anders Cui"
+date: "Thursday, August 21, 2014"
+output: ioslides_presentation
+---
+
+## 什么是统计学?
+
+当我们谈论**统计学**时，我们在谈论什么？
+
+- CPI
+- 失业率
+- Excel表格
+- 饼图，柱状图
+- 正态分布
+
+说到底就是各种**数据**，统计学是关于**数据的科学和艺术**。
+
+
+## 数据从何而来？
+
+我们怎样才能相信看到的数据和图表？第一个该问的问题是：“这些数字是从哪里来的？”
+
+
+## 数据基本术语
+
+- 个体(individual)：数据描述的对象，如人、计算机或其它
+- 变量(variable)：一个个体的某种特征或属性，如姓名、年龄或兴趣
+
+
+两者类似于Excel Sheet中行和列，下面是一个例子：
+
+![MediaHub Uploads](ind_var.png)
+
+
+变量可分为数量与类型两类。
+
+
+## 变量的选择
+
+富人区与普通区的资源回收度量。P4
+
+
+## 方法一：观测研究（Observational Study）
+
+- 了解黑猩猩的行为
+- 老师与小学生在教室中的互动
+
+Jane Goodall在坦桑尼亚的观测改变了人们的“黑猩猩是素食动物”的观点。
+
+在观测之前，可能不清楚应记录什么，需要找到某些问题和模式，如黑猩猩多久猎食一次？单独行动还是群体行动？系统性的观测，加上清楚定义的变量，比只是观测更有说服力。
+
+**观测**并不试图去影响回应（个体的回应）。
+
+
+## 方法二：抽样调查（Sample Survey）
+
+### 所谓管中窥豹
+
+- 总体（population）：要了解的对象全体
+- 样本（sample）：总体的一部分，通过这一部分推断总体的信息
+
+常见的例子
+
+- 民意调查（Gallup），总体是18岁以上美国居民，样本是接受过电话访谈的人
+- 当前人口调查（CPS），总体是全部美国住户，样本是每月访谈的约50 000个住户
+
+普查（Census）可认为是试图把整个总体纳入样本的抽样调查。
+
+
+## 方法三：实验（Experiment）
+
+与观测不同的是，实验的目的就是要改变行为。通过某些特定的处理（treatment），以观察某些反应。
+
+- 一种药物的效果
+- 人们在不看商标的情况下，喜欢可口可乐还是百事可乐
+- 很多心理学研究
+
+实验在科学研究中不可或缺，它可以为因果关系提供良好的证据。
+
+
+## Slide with R Code and Output
+
+```{r}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+## Other Resources
+
+* [可汗学院-统计学][khstats]
+* [Markdown Cheatsheet][mdtutor]
+
+[gallup]: www.gallup.com/poll
+[cpshome]: www.bls.gov/cpshome.htm
+[khstats]: http://v.163.com/special/Khan/khstatistics.html
+[mdtutor]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
