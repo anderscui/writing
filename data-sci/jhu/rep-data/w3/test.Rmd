@@ -1,0 +1,25 @@
+---
+title: "Storm Events Analysis in the United States"
+author: "Anders Cui"
+date: "Sunday, August 24, 2014"
+output: html_document
+---
+
+## Synopisis
+
+In this document, I will show you an analysis of storms and other severe weather 
+events in the United States. The data set comes from NOAA which tracks characteristics of major storms and weather events in the United States during 1950 to 2011.
+
+At the end of this document, I will show you:
+
+- Which types of events are most harmful for population health
+- Which types of events have the greatest economic consequences
+
+## Data Processing
+
+First, let's read the data set.
+
+```{r, echo=TRUE}
+setwd("D:/andersc/r/")
+data <- read.csv("activity.csv", stringsAsFactors = FALSE)
+```

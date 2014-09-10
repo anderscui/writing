@@ -1,0 +1,149 @@
+---
+title: "Storm Events Analysis in the United States"
+author: "Anders Cui"
+date: "Sunday, August 24, 2014"
+output: html_document
+---
+
+## Synopisis
+
+In this document, I will show you an analysis of storms and other severe weather 
+events in the United States. The data set comes from NOAA which tracks characteristics of major storms and weather events in the United States during 1950 to 2011.
+
+At the end of this document, I will show you:
+
+- Which types of events are most harmful for population health
+- Which types of events have the greatest economic consequences
+
+## Data Processing
+
+First, let's read the data set.
+
+```{r, echo=TRUE}
+setwd("D:/andersc/r/")
+data <- read.csv("StormData.csv", stringsAsFactors = FALSE)
+```
+
+After checking the variable names, I extracted the variables we need in this 
+analysis, their meanings are briefly listed below:
+
+- BGN_DATE: begin date of the event
+- EVTYPE: event type
+- FATALITIES: fatilities in the event
+- INJURIES: injuries in the event
+- PROPDMG: property damages in the event
+- PROPDMGEXP: property damage exponents
+- CROPDMG: crop damages in the event
+- CROPDMGEXP: crop damage exponents
+
+The basic process is that I summed up the **fatilities** and **injuries** as **Population Health**, and the **property** damages and **crop** damages as **Economic Consequences**.
+
+```{r, echo=TRUE}
+vars <- c("BGN_DATE", "EVTYPE", "FATALITIES", "INJURIES", "PROPDMG",
+          "PROPDMGEXP", "CROPDMG", "CROPDMGEXP")
+
+# tidy is the cleaned data set.
+tidy <- data[vars]
+tidy$date <- as.Date(tidy$BGN_DATE, "%m/%d/%Y %H:%M:%S")
+
+# calculate harms to population health
+tidy$population_health <- tidy$FATALITIES + tidy$INJURIES
+```
+
+Next, I use the following code to view the values of these exponents.
+
+```{r, echo=TRUE}
+unique(tidy$PROPDMGEXP)
+unique(tidy$CROPDMGEXP)
+```
+
+We can see that some values are characters, some others are numbers, so we need to uniform them.
+
+```{r, echo=TRUE}
+# convert damage exponents to a uniform numberical representation
+# properties damage
+tidy$PROPDMGEXP[(tidy$PROPDMGEXP == "") |
+                    (tidy$PROPDMGEXP == "+") |
+                    (tidy$PROPDMGEXP == "-") | 
+                    (tidy$PROPDMGEXP == "?")] <- 0
+
+tidy$PROPDMGEXP[(tidy$PROPDMGEXP == "h") | 
+                    (tidy$PROPDMGEXP == "H")] <- 2
+
+tidy$PROPDMGEXP[(tidy$PROPDMGEXP == "k") | 
+                    (tidy$PROPDMGEXP == "K")] <- 3
+
+tidy$PROPDMGEXP[(tidy$PROPDMGEXP == "m") | 
+                    (tidy$PROPDMGEXP == "M")] <- 6
+
+tidy$PROPDMGEXP[(tidy$PROPDMGEXP == "B")] <- 9
+
+# crop damages
+tidy$CROPDMGEXP[(tidy$CROPDMGEXP == "") |
+                    (tidy$CROPDMGEXP == "?")] <- 0
+
+tidy$CROPDMGEXP[(tidy$CROPDMGEXP == "k") | 
+                    (tidy$CROPDMGEXP == "K")] <- 3
+
+tidy$CROPDMGEXP[(tidy$CROPDMGEXP == "m") | 
+                    (tidy$CROPDMGEXP == "M")] <- 6
+
+tidy$CROPDMGEXP[(tidy$CROPDMGEXP == "B")] <- 9
+
+# convert to numbers
+tidy$PROPDMGEXP <- as.integer(tidy$PROPDMGEXP)
+tidy$CROPDMGEXP <- as.integer(tidy$CROPDMGEXP)
+
+tidy$eco_dmg <- tidy$PROPDMG * 10^tidy$PROPDMGEXP + 
+                   tidy$CROPDMG * 10^tidy$CROPDMGEXP
+
+health <- sort(tapply(tidy$population_health, tidy$EVTYPE, sum), decreasing = T)
+eco_dmg <- sort(tapply(tidy$eco_dmg, tidy$EVTYPE, sum), decreasing = T)
+```
+
+Now we've got all the data we need.
+
+## Results
+
+I will show the results to you by plots which plotted by **ggplot2** package, so 
+let's import the package.
+
+```{r, echo=TRUE}
+library(ggplot2)
+```
+
+Let's see the bar plot of top 5 most harmful event types to population health.
+
+```{r, echo=TRUE}
+# population health
+health_top5 <- health[1:5]
+
+types <- as.vector(names(head(health_top5)))
+values <- as.vector(health_top5)
+df <- data.frame(types, values)
+ggplot(data = df, aes(x = df$types, y = df$values)) + 
+    geom_bar(stat = "identity") + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+    xlab("Event Type") + ylab("# of Harms to Population Health") + 
+    ggtitle("Top 5 Most Harmful Event Types, 1950-2011")
+```
+
+It's obvious that **TORNADO** event type is the most harmful one, which much worse than events.
+
+Finally, let's take a look at the bar plot of top 5 event types which caused highest economic damages.
+
+```{r, echo=TRUE}
+# economic consequences
+eco_top5 <- eco_dmg[1:5]
+
+types <- as.vector(names(head(eco_top5)))
+values <- as.vector(eco_top5)
+df <- data.frame(types, values)
+ggplot(data = df, aes(x = df$types, y = df$values)) + 
+    geom_bar(stat = "identity") + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+    xlab("Event Type") + ylab("Economic Damages ($)") + 
+    ggtitle("Top 5 Highest Economic Damages, 1950-2011")
+```
+
+As per the bar plot, **FLOOD** event type caused highest economic damages.
