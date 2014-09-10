@@ -283,33 +283,124 @@ Dev：需要1.68天
 您去度假的时候，据FBI的统计资料，26%的住宅资料发生在阵亡将士纪念日和劳动节之间。
 
 
-## Slide with R Code and Output
 
-```{r}
-summary(cars)
-```
 
-## Slide with Plot
+## 看图说话
+
+**比较-整体与部分**
 
 ```{r, echo=FALSE}
-plot(cars)
+# install.packages("httpuv")
 ```
 
-## 变量的选择
+```{r, echo=FALSE}
+slices <- c(150000, 20000, 5000)
+lbls <- c("Image", "Video", "Audio")
 
-富人区与普通区的资源回收度量。P4
+pie(slices, labels=lbls, main="Media Type")
+```
 
+## 柱状图
+
+```{r, echo=FALSE}
+library(vcd)
+
+opar <- par(no.readonly=TRUE)
+par(mfcol=c(1, 2))
+
+plot(Arthritis$Improved, main="Simple Bar Plot",
+     xlab="Improvement", ylab="Frequency")
+
+plot(Arthritis$Improved, main="Horizontal Bar Plot",
+     xlab="Frequency", ylab="Improvement", horiz=TRUE)
+```
+
+par(opar)
+
+## 线图、时间序列图
+
+![Time Series](time-series.png)
+
+## 直方图（一）
+
+```{r, echo=FALSE}
+hist(mtcars$mpg,
+     breaks=12,
+     col="red",
+     xlab="Miles Per Gallon",
+     main="Colored histogram with 12 bins")
+```
+
+## 直方图（二）
+
+```{r, echo=FALSE}
+hist(mtcars$mpg,
+     freq=FALSE,
+     breaks=12,
+     col="red",
+     xlab="Miles Per Gallon",
+     main="histogram, rug plot, density curve")
+rug(jitter(mtcars$mpg))
+lines(density(mtcars$mpg), col="blue", lwd=2)
+box()
+```
+
+## 箱形图
+
+```{r, echo=FALSE}
+# Boxplot of MPG by Car Cylinders 
+boxplot(mpg~cyl,data=mtcars, main="Car Milage Data", 
+      xlab="Number of Cylinders", ylab="Miles Per Gallon")
+```
+
+
+## 正态分布
+
+![Normal Distribution](normal-distrubution.gif)
+
+
+## 散点图（一）
+
+```{r, message=FALSE, echo=FALSE}
+library(UsingR)
+data(diamond)
+
+plot(diamond$carat, diamond$price,
+     xlab = "Mass (carats)",
+     ylab = "Price (SIN $)",
+     bg = "lightblue",
+     col = "black", cex = 1.1, pch = 21, frame = FALSE)
+#abline(lm(price ~ carat, data = diamond), lwd = 2)
+```
+
+
+## 散点图（二）
+
+```{r, message=FALSE, echo=FALSE}
+library(UsingR)
+data(diamond)
+
+plot(diamond$carat, diamond$price,
+     xlab = "Mass (carats)",
+     ylab = "Price (SIN $)",
+     bg = "lightblue",
+     col = "black", cex = 1.1, pch = 21, frame = FALSE)
+abline(lm(price ~ carat, data = diamond), lwd = 2)
+```
 
 ## Other Resources
 
-* [可汗学院-统计学][khstats]
 * [Markdown Cheatsheet][mdtutor]
+* [Gallup][gallup]
+* [可汗学院-统计学][khstats]
+* [正态分布的前世今生][normal]
+* [R in Action][quickr]
 
 [gallup]: www.gallup.com/poll
 [cpshome]: www.bls.gov/cpshome.htm
 [resrand]: www.randomizer.org
 [normal]: http://songshuhui.net/archives/76501
+[quickr]: http://www.statmethods.net/
 
 [khstats]: http://v.163.com/special/Khan/khstatistics.html
 [mdtutor]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-
