@@ -1,0 +1,218 @@
+Data Analysis with R
+========================================================
+width: 1600
+height: 1080
+author: Anders Cui
+date: October 15th
+
+
+Overview
+========================================================
+
+In this presentation, I want to show you the following:
+
+1. Descriptive Statistics (描述性统计)
+  1. Numberical Data
+  2. Plots 
+  3. Categorical Data
+  
+2. Inferential Statistics (推断性统计)
+
+
+1.1.1 Mean (平均值)
+========================================================
+
+```{r}
+x <- 1:10
+v <- sample(x, 5)
+v
+mean(v)
+```
+
+
+1.1.2.1 Median (中位数)
+========================================================
+```{r}
+x <- 1:10
+v1 <- sample(x, 5)
+sort(v1)
+
+median(v1)
+
+v2 <- sample(x, 6)
+sort(v2)
+median(v2)
+```
+
+
+1.1.2.2 Mean vs. Median
+========================================================
+Median对于极端值的变化受影响小很多，比如最高收入者从100W变化到1000W，中位数保持不变，而平均值受影响较大。
+
+对于skewed的数据（平均收入，住房面积等等），使用median；若较对称，则使用mean。
+
+
+
+1.1.3 Variance & Standard Deviation
+========================================================
+Variance (方差): measures how far a set of numbers is spread out.
+
+Standard Deviation (标准差): sd is the square root of the variance, has the same dimension as the data, and hence is comparable to deviations from the mean.
+
+```{r}
+x1 <- 1:10
+x2 <- x1 * 10
+
+```
+
+var(x1) is `r round(var(x1), 2)`, sd(x1) is `r round(sd(x1), 2)`. 
+
+var(x2) is `r round(var(x2), 2)`, sd(x2) is `r round(sd(x2), 2)`.
+
+
+1.1.4.1 Five Numbers
+========================================================
+
+- Min 
+- Q1 (25%)
+- Median (50%)
+- Q3 (75%)
+- Max
+
+Range <- Max - Min
+
+IQR <- Q3 - Q1
+
+
+1.1.4.2 Five Numbers Calculation
+========================================================
+```{r}
+library(ISLR)
+data(College)
+
+quantile(College$Expend, c(0, 0.25, 0.5, 0.75, 1))
+summary(College$Expend)
+```
+
+
+1.1.4.3 Five Numbers and Box plots
+========================================================
+
+```{r}
+boxplot(College$Expend ~ College$Private)
+```
+
+
+1.2 Plots
+========================================================
+test
+
+
+
+1.2.1 Comparision (整体与部分)
+========================================================
+
+```{r, echo=FALSE}
+slices <- c(150000, 20000, 5000)
+lbls <- c("Image", "Video", "Audio")
+
+pie(slices, labels=lbls, main="Media Type")
+```
+
+1.2.2 Bar Plots (柱状图)
+========================================================
+```{r, echo=FALSE}
+library(vcd)
+
+opar <- par(no.readonly=TRUE)
+par(mfcol=c(1, 2))
+
+plot(Arthritis$Improved, main="Simple Bar Plot",
+     xlab="Improvement", ylab="Frequency")
+
+plot(Arthritis$Improved, main="Horizontal Bar Plot",
+     xlab="Frequency", ylab="Improvement", horiz=TRUE)
+```
+
+
+1.2.3 Time Series (时间序列图)
+========================================================
+![Time Series](time-series.png)
+
+
+
+1.2.4 Histgram (直方图)
+========================================================
+```{r, echo=FALSE}
+hist(mtcars$mpg,
+     freq=FALSE,
+     breaks=12,
+     col="green",
+     xlab="Miles Per Gallon",
+     main="histogram, rug plot, density curve")
+rug(jitter(mtcars$mpg))
+lines(density(mtcars$mpg), col="blue", lwd=2)
+box()
+```
+
+1.2.5 Box Plot (箱形图)
+========================================================
+```{r, echo=FALSE}
+# Boxplot of MPG by Car Cylinders 
+boxplot(mpg~cyl,data=mtcars, main="Car Milage Data", 
+      xlab="Number of Cylinders", ylab="Miles Per Gallon")
+```
+
+1.2.6.1 Scatter Plot 1 (散点图)
+========================================================
+```{r, message=FALSE, echo=FALSE}
+library(UsingR)
+data(diamond)
+
+plot(diamond$carat, diamond$price,
+     xlab = "Mass (carats)",
+     ylab = "Price (SIN $)",
+     bg = "lightblue",
+     col = "black", cex = 1.1, pch = 21, frame = FALSE)
+#abline(lm(price ~ carat, data = diamond), lwd = 2)
+```
+
+
+1.2.6.2 Scatter Plot 2 (散点图)
+========================================================
+```{r, message=FALSE, echo=FALSE}
+library(UsingR)
+data(diamond)
+
+plot(diamond$carat, diamond$price,
+     xlab = "Mass (carats)",
+     ylab = "Price (SIN $)",
+     bg = "lightblue",
+     col = "black", cex = 1.1, pch = 21, frame = FALSE)
+abline(lm(price ~ carat, data = diamond), lwd = 2)
+```
+
+1.2.7 正态分布
+========================================================
+![Normal Distribution](normal-distrubution.gif)
+
+
+## Other Resources
+========================================================
+* [Markdown Cheatsheet][mdtutor]
+* [Gallup][gallup]
+* [可汗学院-统计学][khstats]
+* [正态分布的前世今生][normal]
+* [R in Action][quickr]
+
+[gallup]: www.gallup.com/poll
+[cpshome]: www.bls.gov/cpshome.htm
+[resrand]: www.randomizer.org
+[normal]: http://songshuhui.net/archives/76501
+[quickr]: http://www.statmethods.net/
+
+[khstats]: http://v.163.com/special/Khan/khstatistics.html
+[mdtutor]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+[wikistats]http://en.wikipedia.org/wiki/Statistics
+http://en.wikipedia.org/wiki/Variance

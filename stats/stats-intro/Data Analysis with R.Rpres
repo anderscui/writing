@@ -1,0 +1,544 @@
+Data Analysis with R
+========================================================
+width: 1600
+height: 1080
+author: Anders Cui
+date: October 16th
+
+
+Overview
+========================================================
+
+In this presentation, I want to show you the following:
+
+0. R
+
+1. Descriptive Statistics (描述性统计)
+  1. Numberical Data
+  2. Plots
+  
+2. Inferential Statistics (推断性统计)
+  1. Regression
+      1. Linear
+      2. Others...
+  2. Hypothesis Test
+      1. HT
+      2. CI
+
+
+
+0.1 R
+========================================================
+
+[R][wikir] provides a wide variety of 
+
+- statistical techniques
+    - linear and nonlinear modeling
+    - classical statistical tests
+    - time-series analysis
+    - classification
+    - clustering
+- graphical techniques
+
+***
+
+Programming features
+
+- interpreted
+- imperative
+- functional
+- object-oriented
+
+--
+
+thousands of packages
+
+[wikir]: http://en.wikipedia.org/wiki/R_%28programming_language%29
+
+
+0.2 Other languages and tools
+========================================================
+
+Python
+
+- NumPy
+- SciPy
+- Matplotlib
+- IPython
+- NLTK
+
+***
+
+Matlab or Octave
+
+
+
+1.1.1 Mean (平均值)
+========================================================
+
+```{r setoptions, echo=FALSE}
+library(knitr)
+opts_chunk$set(fig.width=18, fig.height=12)
+```
+
+
+```{r}
+x <- 1:10
+v <- sample(x, 5)
+v
+mean(v)
+```
+
+
+1.1.2.1 Median (中位数)
+========================================================
+```{r}
+x <- 1:10
+v1 <- sample(x, 5)
+sort(v1)
+
+median(v1)
+
+v2 <- sample(x, 6)
+sort(v2)
+median(v2)
+```
+
+```{r,echo=FALSE}
+library(ggplot2)
+```
+
+
+
+1.1.2.2 Mean vs. Median
+========================================================
+
+- Mean value tends to be affected by **outliers** (100W -> 1000W)
+- For skewed data, use median
+- For symmetric data, use mean
+
+
+
+1.1.3 Variance & Standard Deviation
+========================================================
+Variance (方差):
+
+- Measures how far a set of numbers is spread out
+
+Standard Deviation (标准差): 
+
+- SD is the square root of the variance 
+- Has the same dimension as the data
+- Comparable to deviations from the mean
+
+```{r}
+x1 <- 1:10
+x2 <- x1 * 10 # (10, 20, 30, ..., 100)
+```
+
+var(x1) is `r round(var(x1), 2)`, sd(x1) is `r round(sd(x1), 2)`. 
+
+var(x2) is `r round(var(x2), 2)`, sd(x2) is `r round(sd(x2), 2)`.
+
+
+1.1.4.1 Five Numbers
+========================================================
+
+- Min 
+- Q1 (25%)
+- Median (50%)
+- Q3 (75%)
+- Max
+
+Range <- Max - Min
+
+IQR <- Q3 - Q1
+
+
+1.1.4.2 Five Numbers Calculation
+========================================================
+```{r}
+library(ISLR)
+data(College)
+
+quantile(College$Expend, c(0, 0.25, 0.5, 0.75, 1))
+summary(College$Expend)
+```
+
+
+1.1.4.3 Five Numbers and Box plots
+========================================================
+
+```{r,echo=FALSE}
+p <- ggplot(College, aes(factor(Private), Expend))
+p + geom_boxplot(outlier.colour = "green", outlier.size = 6)
+```
+
+
+1.2 Plots
+========================================================
+
+**Purposes** 
+
+- Comparison
+- Distribution
+- Trending
+- Relationship
+
+
+
+1.2.1.1 Pie Plot (饼图)
+========================================================
+
+```{r, echo=FALSE, fig.width=10, fig.height=10}
+types <- c(50000, 20000, 10000, 10000)
+lbls <- c("Image", "Video", "Audio", "Docs")
+
+pie(types, labels=lbls, main="Media Type", col=rainbow(length(lbls)))
+```
+
+***
+
+```{r, echo=FALSE, fig.width=10, fig.height=10}
+library(plotrix)
+pie3D(types, labels=lbls, explode=0.1, 
+      main="Media Type")
+```
+
+1.2.1.2 Bar Plot (柱状图)
+========================================================
+
+![eco_damages](eco_damages.png)
+
+
+1.2.1.3 Box Plot (箱形图)
+========================================================
+```{r, echo=FALSE}
+# Boxplot of MPG by Car Cylinders 
+p <- ggplot(mtcars, aes(factor(cyl), mpg))
+p + geom_boxplot(outlier.colour = "green", outlier.size = 6)
+
+```
+
+
+1.2.2.1 Histgram (直方图)
+========================================================
+```{r, echo=FALSE}
+library(ISLR)
+data(College)
+# hist(mtcars$mpg,
+#      freq=FALSE,
+#      breaks=12,
+#      col="green",
+#      xlab="Miles Per Gallon",
+#      main="histogram, rug plot, density curve")
+# rug(jitter(mtcars$mpg))
+# lines(density(mtcars$mpg), col="blue", lwd=2)
+# box()
+ggplot(College, aes(x = Expend)) + geom_histogram()
+```
+
+
+1.2.2.2 Normal Distribution (正态分布)
+========================================================
+![Normal Distribution](normal-distribution.png)
+
+68-95-99.7 (empirical) rule
+
+
+
+1.2.2.3 Normal Distribution & CLT
+========================================================
+
+**Central Limit Theorem**
+
+- Error Distribution
+- Basis of hypothesis Test
+
+![CLT](clt.jpg)
+
+
+
+
+1.2.3 Time Series (时间序列图)
+========================================================
+![Time Series](time-series.png)
+***
+![Time Series](time-series2.png)
+
+
+
+1.2.4.1 Scatter Plot 1 (散点图)
+========================================================
+```{r, message=FALSE, echo=FALSE}
+library(UsingR)
+data(diamond)
+
+plot(diamond$carat, diamond$price,
+     xlab = "Mass (carats)",
+     ylab = "Price (SIN $)",
+     bg = "lightblue",
+     col = "black", cex = 1.1, pch = 21, frame = FALSE)
+```
+
+
+1.2.4.2 Scatter Plot 2 - ggplot2
+========================================================
+```{r, message=FALSE, echo=FALSE}
+qplot(Sepal.Length, Petal.Length, data = iris, geom = "point", 
+      color = Species, size = 5) + 
+  scale_size(range = c(1, 10))
+```
+
+
+1.2.5
+========================================================
+
+**Graphics System**
+
+- base
+- lattice
+- ggplot2
+
+
+
+2 Inferential Statistics
+========================================================
+
+Statistical Inference
+  - Make estimations using sample data
+  - Test hypotheses
+  - Infer predictions
+  
+Common forms
+  - (Point) Estimation (vs. parameter)
+  - Confidence interval (set estimation) / confidence level
+  - Rejection of a hypothesis
+  
+
+
+2.1.1 Estimate
+========================================================
+- Population (parameter)
+- Sample (estimation)
+
+--
+
+* Observation
+* Experiment
+
+--
+
+* Point Estimate (点估计)
+* Interval Estimate (区间估计)
+
+2.1.2 Point Estimate
+========================================================
+
+JP Morgan Run
+- How long does it take a runner, on average, to complete the 10 miles?
+- What is the average age of the runners?
+
+
+
+**Point estimates are not exact**
+
+
+
+2.1.3 Confidence Interval (置信区间)
+========================================================
+
+- CLT
+- Normal Distribution
+- Sampling Distribution
+
+=> Confidence interval: [point estimate - 1.96 * SE, point estimate + 1.96 * SE]
+
+=> Confidence level: 95% (or 90%, 99%) (置信水平)
+
+```{r}
+mean_time <- 95.61
+se <- 1.58
+
+mean_time + c(-1, 1) * 1.64 * se
+mean_time + c(-1, 1) * 1.96 * se
+mean_time + c(-1, 1) * 2.58 * se
+```
+
+
+
+2.1.4 Confidence Interval Variants
+========================================================
+
+- Mean
+- Proportion (survey)
+
+
+
+2.2.1 Hypothesis Test (假设检验)
+========================================================
+Analogy – Courtroom trial
+
+A defendant is considered not guilty as long as his or her guilt is not proven. The prosecutor tries to prove the guilt of the defendant. Only when there is enough charging evidence the defendant is convicted.
+
+- Null hypothesis (零言假设) - H0
+- Alternative hypothesis (备择假设) - HA
+
+![Types of errors](types_of_errors.png)
+
+We only can reject or fail to reject.
+
+
+
+2.2.2 Intuition
+========================================================
+
+```{r}
+t_12 <- 95.61
+t_06 <- 93.29
+
+# does this data provide strong evidence that there has been a change?
+ci_12 <- c(92.5, 98.7)
+
+# when will we be confident to reject?
+# when will we fail to reject?
+ci_13 <- 90
+```
+
+
+2.2.3 p-value
+========================================================
+**Framework**
+
+The **p-value** is the probability of observing data at least as favorable to the alternative hypothesis as our current data set, if the null hypothesis is true.
+
+![hyp_test](hyp_test.gif)
+
+
+2.2.4 Calculation
+========================================================
+```{r}
+# someone told you the average time of 2012 is 92 minutes, you sampled...
+mu <- 92
+mean_time <- 95.61
+se <- 1.58
+
+#h0 -> mu == 92
+#ha -> mu != 92
+2 * pnorm(mean_time, mu, se, lower.tail = F)
+
+#ha -> mu > 90
+pnorm(mean_time, mu, se, lower.tail = F)
+```
+
+
+
+2.3.1 Linear Regression 1 (线性回归)
+========================================================
+
+```{r, message=FALSE, echo=FALSE}
+library(UsingR)
+data(diamond)
+
+plot(diamond$carat, diamond$price,
+     xlab = "Mass (carats)",
+     ylab = "Price (SIN $)",
+     bg = "lightblue",
+     col = "black", cex = 1.1, pch = 21, frame = FALSE)
+abline(lm(price ~ carat, data = diamond), lwd = 2)
+```
+
+
+2.3.2 Linear Regression 2 (线性回归)
+========================================================
+
+```{r, message=FALSE}
+library(UsingR)
+data(diamond)
+fit <- lm(price ~ carat, data = diamond)
+fit
+
+new_data <- data.frame(carat = seq(0.1, 1, 0.1))
+predict(fit, new_data, interval = "confidence", level = 0.95)
+```
+
+
+2.3.3 Other Regression Models
+========================================================
+
+- Multiple linear regression
+- Logistic regression
+- Poisson regression
+- ...
+
+
+
+Further Reading
+========================================================
+- Statistics : Concepts and Controversies (统计学的世界)
+- Head First Statistics
+- Head First Data Analysis
+- [Khan Academy Statistics][khstats]
+- [OpenIntro Statistics][openintro]
+- [Introduction To Probability][probintro]
+- [R in Action][quickr]
+
+***
+
+- Probability
+- Statistics
+- Data Analysis
+- Machine Learning
+- Natrual Language Processing
+
+
+[quickr]: http://www.statmethods.net/
+[openintro]: http://www.openintro.org/
+[probintro]: http://www.amazon.com/Introduction-Probability-2nd-Dimitri-Bertsekas/dp/188652923X/
+[khstats]: http://v.163.com/special/Khan/khstatistics.html
+
+
+References
+========================================================
+* [Markdown Cheatsheet][mdtutor]
+* [Khan Academy Statistics][khstats]
+* [Gallup][gallup]
+* [OpenIntro Statistics][openintro]
+* [Introduction To Probability][probintro]
+* [R in Action][quickr]
+* [正态分布的前世今生][normal]
+
+
+[gallup]: www.gallup.com/poll
+[cpshome]: www.bls.gov/cpshome.htm
+[resrand]: www.randomizer.org
+[normal]: http://songshuhui.net/archives/76501
+[quickr]: http://www.statmethods.net/
+[openintro]: http://www.openintro.org/
+
+[khstats]: http://v.163.com/special/Khan/khstatistics.html
+[mdtutor]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+[wikir]: http://en.wikipedia.org/wiki/R_%28programming_language%29
+[wikistats]: http://en.wikipedia.org/wiki/Statistics
+[wikivar]: http://en.wikipedia.org/wiki/Variance
+[wikiclt]: http://en.wikipedia.org/wiki/Central_limit_theorem
+[wikida]: http://en.wikipedia.org/wiki/Data_analysis
+[wikiinf]: http://en.wikipedia.org/wiki/Statistical_inference
+[wikidesc]: http://en.wikipedia.org/wiki/Descriptive_statistics
+[wikilr]: http://en.wikipedia.org/wiki/Linear_regression
+
+[rpubstorm]: http://rpubs.com/andersc/storm_events
+
+[probintro]: http://www.amazon.com/Introduction-Probability-2nd-Dimitri-Bertsekas/dp/188652923X/
+
+
+The End
+========================================================
+
+Stay hungry, stay foolish. - Steve Jobs
+
+
+
+
+
