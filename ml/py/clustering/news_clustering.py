@@ -1,0 +1,69 @@
+import scipy as sp
+import news_group
+
+from vectorizers import StemmedTfidfVectorizer
+
+vectorizer = StemmedTfidfVectorizer(min_df=10, max_df=0.5,
+                                    stop_words='english', decode_error='ignore')
+
+groups = ['comp.graphics', 'comp.os.ms-windows.misc',
+          'comp.sys.ibm.pc.hardware', 'comp.sys.ma c.hardware',
+          'comp.windows.x', 'sci.space']
+dataset = news_group.train(groups)
+print('Number of posts: ', len(dataset.filenames))
+
+vectorized = vectorizer.fit_transform(dataset.data)
+num_samples, num_features = vectorized.shape
+print(num_samples, num_features)
+
+
+# /////////////////////////////////////////////////////////////////////////
+
+new_post = \
+    """Disk drive problems. Hi, I have a problem with my hard disk.
+After 1 year it is working only sporadically now.
+I tried to format it, but now it doesn't boot any more.
+Any ideas? Thanks.
+"""
+
+labels = dataset.target
+num_clusters = 50
+
+from sklearn.cluster import KMeans
+from sklearn import metrics
+
+km = KMeans(n_clusters=num_clusters, init='k-means++', n_init=1, verbose=1)
+clustered = km.fit(vectorized)
+
+print("Homogeneity: %0.3f" % metrics.homogeneity_score(labels, km.labels_))
+print("Completeness: %0.3f" % metrics.completeness_score(labels, km.labels_))
+print("V-measure: %0.3f" % metrics.v_measure_score(labels, km.labels_))
+print("Adjusted Rand Index: %0.3f" %
+      metrics.adjusted_rand_score(labels, km.labels_))
+print("Adjusted Mutual Information: %0.3f" %
+      metrics.adjusted_mutual_info_score(labels, km.labels_))
+print(("Silhouette Coefficient: %0.3f" %
+       metrics.silhouette_score(vectorized, labels, sample_size=1000)))
+
+new_post_vec = vectorizer.transform([new_post])
+new_post_label = km.predict(new_post_vec)[0]
+
+similar_indices = (km.labels_ == new_post_label).nonzero()[0]
+
+similar = []
+for i in similar_indices:
+    dist = sp.linalg.norm((new_post_vec - vectorized[i]).toarray())
+    similar.append((dist, dataset.data[i]))
+
+print('Number of similar posts: ', len(similar))
+similar = sorted(similar)
+# import pdb
+# pdb.set_trace()
+
+show_at_1 = similar[0]
+show_at_2 = similar[len(similar) / 2]
+show_at_3 = similar[-1]
+
+print(show_at_1)
+print(show_at_2)
+print(show_at_3)
