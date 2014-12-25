@@ -1,0 +1,18 @@
+In this project, I will learn methods that do not cluster objects, but put them into a small number of groups called topics.
+
+The subfield of machine learning that deals with these problems is called topic modeling.
+
+The simplest topic model is LDA:
+LDA: Latent Dirichlet Allocation
+https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation
+https://en.wikipedia.org/wiki/Topic_model
+
+
+Our task is to take a collection of text and reverse engineer this fable in order to discover what topics are out there
+and also where each document belongs.
+
+
+scikit-learn does not contain LDA impl, so here I use the gensim package which is developed by Radim Rehurek.
+
+
+The dataset we will use is AP (Associated Press) of news reports.
