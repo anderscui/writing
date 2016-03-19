@@ -51,8 +51,20 @@ tokenizer = TreebankWordTokenizer()
 print(tokenizer.tokenize('Hello NLTK.'))
 ```
 
-It works by separating words using spaces and punctuation. There are two other word tokenizers worth looking at: ```PunktWordTokenizer``` and ```WordPunktTokenizer```, these differ from ```TreebankWordTokenizer``` by how they handle punctuation and contractions, but they all inherit from ```TokenizerI```.
+It works by separating words using spaces and punctuation. There are two other word tokenizers worth looking at: ```PunktWordTokenizer``` and ```WordPunktTokenizer```, these differ from ```TreebankWordTokenizer``` by how they handle **punctuation and contractions**, but they all inherit from ```TokenizerI```.
 
+## Tokenizing sentences using regular exp
 
+The ```RegexpTokenizer``` class works by compiling your pattern, then calling ```re.findall``` on your text.
 
+## Training a sentence tokenizer
 
+Also use ```PunktSentenceTokenizer```.
+
+## Filtering stopwords in a tokenized sentence
+
+**Stopwords** are common words that generally do not contribute to the meaning of a sentence, at least for the purposes of info retrieval and NLP. These are words such as *the* and *a*.
+
+NLTK comes with a **stopwords** corpus that contains word lists for many languages.
+
+The **stopwords** corpus is an instance of ```nltk.corpus.reader.WordListCorpusReader```. 
