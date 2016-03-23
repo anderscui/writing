@@ -105,3 +105,7 @@ It's often useful to reduce the vocabulary of a text by replacing words with com
 
 ## Replacing negations with antonyms
 
+The opposite of synonym replacement is **antonym replacement**. We can use WordNet to replace words with unambiguous antonyms.
+
+We will try to convert a sentence like "let's not uglify our code" to "let's beautify our code".
+
