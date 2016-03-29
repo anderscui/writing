@@ -123,4 +123,84 @@ print(combined_tagger.evaluate(test_sents))
 
 ## Creating a model of likely word tags
 
+```python
+from nltk.probability import FreqDist, ConditionalFreqDist
+
+def word_tag_model(words, tagged_words, limit=200):
+    fd = FreqDist(words)
+    cfd = ConditionalFreqDist(tagged_words)
+    most_freq = (word for word, count in fd.most_common(limit))
+    return dict((word, cfd[word].max()) for word in most_freq)
+```
+
+## Tagging with regular expressions
+
+For instance, we can match numbers with \d+ to assign the tag **CD**(cardinal number).
+
+```python
+patterns = [
+    (r'^\d+$', 'CD'),
+    (r'.*ing$', 'VBG'),  # gerunds
+    (r'.*ment$', 'NN'),  # movement
+    (r'.*ful$', 'JJ'),  # wonderful
+]
+
+tagger = RegexpTagger(patterns)
+print(tagger.evaluate(test_sents))
+```
+
+## Affix tagging
+
+The ```AffixTagger``` class is another ```ContextTagger``` subclass, but this time the context is either the prefix or the stuff of a word.
+
+## Training the Brill tagger
+
+The ```BrillTagger``` class is a transformation-based tagger. It's not a subclass of ```SequentialBackoffTagger```. Instead, the ```BrillTagger``` class uses a series of rules to correct the results of an initial tagger. **These rules are scored based on how many errors they correct minus the number of new errors they produce**.
+
+See more [Brill Tagger](https://en.wikipedia.org/wiki/Brill_tagger).
+
+## Training the TnT tagger
+
+**TnT** stands for **Trigrams'n'Tags**. It is a statistical tagger based on second order Markov models. More details [here](http://www.coli.uni-saarland.de/~thorsten/tnt/).
+
+```python
+from nltk.tag import tnt
+from tag_util import train_sents, test_sents
+
+tnt_tagger = tnt.TnT()
+tnt_tagger.train(train_sents)
+print(tnt_tagger.evaluate(test_sents))
+# 0.875631340384
+
+# deal with unknown tokens
+default_tagger = DefaultTagger('NN')
+unk_tagger = RegexpTagger(patterns, backoff=default_tagger)
+
+tnt_tagger2 = tnt.TnT(unk=unk_tagger, Trained=True)
+tnt_tagger2.train(train_sents)
+print(tnt_tagger2.evaluate(test_sents))
+# 0.896956615584
+```
+
+## Using WordNet for tagging
+
+WordNet Synsets specify a POS tag to each word, but it's very restricted set of possible tags.
+
+## Tagging proper names
+
+Use ```names``` corpus.
+
+## Classifier-based tagging
+
+The ```ClassifierBasedPOSTagger``` class uses classifiation to do POS tagging. Features are extracted from words, and then passed to an internal classifier. The classifier classifies the features and returns a label, in this case, a POS tag.
+
+The ```ClassifierBasedTagger``` class is often the most accurate tagger, but it's also one of the slowest taggers. If speed is an issue, we should stick with a BrillTagger class based on a backoff chain of NgramTagger subclasses and other simple taggers.
+
+## Training a tagger with NLTK-trainer
+
+As you can tell from all the taggers above, there are many different ways to train taggers, and it's impossible to know which methods and parameters will work best without doing training experiments. But training experiments can be tedious, since they often involve many small code changes (and lots of cut and paste) before you converge on an optimal tagger.
+
+Try ```NLTK-Trainer```.
+
+**NLTK-Trainer** is a collection of scripts that give you the ability to run training experiments without writing a single line of code. The project is available on GitHub at https://github.com/japerk/nltk-trainer and has documentation at http://nltk-trainer.readthedocs.org/.
 
