@@ -331,7 +331,7 @@
 			<Title>战国时期开始</Title>
 			<Color>Blue</Color>
 			<Id>1</Id>
-			<DisplayId>13</DisplayId>
+			<DisplayId>14</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -363,7 +363,7 @@
 			<Title>三家分晋</Title>
 			<Color>Yellow</Color>
 			<Id>2</Id>
-			<DisplayId>15</DisplayId>
+			<DisplayId>17</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships>
 				<Relationship>
@@ -401,7 +401,7 @@
 			<Title>魏惠王迁都大梁（今开封）</Title>
 			<Color>Yellow</Color>
 			<Id>3</Id>
-			<DisplayId>17</DisplayId>
+			<DisplayId>19</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships>
 				<Relationship>
@@ -439,7 +439,7 @@
 			<Title>赵武灵王实行胡服骑射，国力大增</Title>
 			<Color>Yellow</Color>
 			<Id>4</Id>
-			<DisplayId>19</DisplayId>
+			<DisplayId>21</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships>
 				<Relationship>
@@ -477,7 +477,7 @@
 			<Title>楚国被秦军大破于“鄢之战”</Title>
 			<Color>Yellow</Color>
 			<Id>5</Id>
-			<DisplayId>20</DisplayId>
+			<DisplayId>22</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships>
 				<Relationship>
@@ -515,7 +515,7 @@
 			<Title>楚国都郢被秦军攻陷，屈原投汨罗江</Title>
 			<Color>Yellow</Color>
 			<Id>6</Id>
-			<DisplayId>21</DisplayId>
+			<DisplayId>23</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships>
 				<Relationship>
@@ -553,7 +553,7 @@
 			<Title>长平之战，赵国以赵括替代廉颇，大败</Title>
 			<Color>Yellow</Color>
 			<Id>7</Id>
-			<DisplayId>24</DisplayId>
+			<DisplayId>26</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships>
 				<Relationship>
@@ -591,7 +591,7 @@
 			<Title>周赧王病逝，周朝灭亡</Title>
 			<Color>Yellow</Color>
 			<Id>8</Id>
-			<DisplayId>23</DisplayId>
+			<DisplayId>25</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships>
 				<Relationship>
@@ -629,7 +629,7 @@
 			<Title>秦灭韩</Title>
 			<Color>Yellow</Color>
 			<Id>9</Id>
-			<DisplayId>26</DisplayId>
+			<DisplayId>28</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -661,7 +661,7 @@
 			<Title>秦灭赵</Title>
 			<Color>Yellow</Color>
 			<Id>10</Id>
-			<DisplayId>27</DisplayId>
+			<DisplayId>29</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -693,7 +693,7 @@
 			<Title>秦灭魏</Title>
 			<Color>Yellow</Color>
 			<Id>11</Id>
-			<DisplayId>28</DisplayId>
+			<DisplayId>30</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -725,7 +725,7 @@
 			<Title>秦灭楚</Title>
 			<Color>Yellow</Color>
 			<Id>12</Id>
-			<DisplayId>29</DisplayId>
+			<DisplayId>31</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -757,7 +757,7 @@
 			<Title>秦灭燕</Title>
 			<Color>Yellow</Color>
 			<Id>13</Id>
-			<DisplayId>30</DisplayId>
+			<DisplayId>32</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -789,7 +789,7 @@
 			<Title>秦灭越</Title>
 			<Color>Yellow</Color>
 			<Id>14</Id>
-			<DisplayId>31</DisplayId>
+			<DisplayId>33</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -821,7 +821,7 @@
 			<Title>秦灭齐，统一中原</Title>
 			<Color>Blue</Color>
 			<Id>15</Id>
-			<DisplayId>32</DisplayId>
+			<DisplayId>34</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -915,7 +915,7 @@
 		</Event>
 		<Event>
 			<Title>周武王于牧野之战打败商王帝辛，商朝灭亡</Title>
-			<Color>Yellow</Color>
+			<Color>Blue</Color>
 			<Id>18</Id>
 			<DisplayId>3</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
@@ -946,42 +946,10 @@
 			<ExternalLinks></ExternalLinks>
 		</Event>
 		<Event>
-			<Title>周懿王元年，发生日食</Title>
-			<Color>Yellow</Color>
-			<Id>19</Id>
-			<DisplayId>4</DisplayId>
-			<LockedInPlace>0</LockedInPlace>
-			<Relationships></Relationships>
-			<Values></Values>
-			<RangeValues>
-				<RangeValue>
-					<Position>
-						<Value Precision="year">-28350864000</Value>
-						<RangeProperty>Date</RangeProperty>
-					</Position>
-					<Span>
-						<Value>
-							<Years>0</Years>
-							<Months>0</Months>
-							<Weeks>0</Weeks>
-							<Days>0</Days>
-							<Hours>0</Hours>
-							<Minutes>0</Minutes>
-							<Seconds>0</Seconds>
-						</Value>
-					</Span>
-					<RangeProperty>Date</RangeProperty>
-					<MinimumZoom>-1.000000</MinimumZoom>
-				</RangeValue>
-			</RangeValues>
-			<Tags></Tags>
-			<ExternalLinks></ExternalLinks>
-		</Event>
-		<Event>
-			<Title>召穆公、周定公共同行政，号称“共和”</Title>
-			<Color>Yellow</Color>
+			<Title>召穆公、周定公共同行政，号称“共和”，这是传统上所认为的中国历史没有争议的确切纪年的开始。</Title>
+			<Color>Red</Color>
 			<Id>20</Id>
-			<DisplayId>5</DisplayId>
+			<DisplayId>4</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1013,7 +981,7 @@
 			<Title>周平王将国都东迁至雒邑（今洛阳）</Title>
 			<Color>Yellow</Color>
 			<Id>21</Id>
-			<DisplayId>6</DisplayId>
+			<DisplayId>5</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1045,7 +1013,7 @@
 			<Title>郑庄公平定共叔段之乱，春秋时期开始</Title>
 			<Color>Yellow</Color>
 			<Id>22</Id>
-			<DisplayId>7</DisplayId>
+			<DisplayId>8</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1077,7 +1045,7 @@
 			<Title>周桓王伐郑，诸侯争霸时代开始</Title>
 			<Color>Yellow</Color>
 			<Id>23</Id>
-			<DisplayId>8</DisplayId>
+			<DisplayId>9</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1109,7 +1077,7 @@
 			<Title>楚武王熊通称王，为诸侯称王之始</Title>
 			<Color>Yellow</Color>
 			<Id>24</Id>
-			<DisplayId>9</DisplayId>
+			<DisplayId>10</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1141,7 +1109,7 @@
 			<Title>齐桓公成为春秋五霸之首</Title>
 			<Color>Yellow</Color>
 			<Id>25</Id>
-			<DisplayId>10</DisplayId>
+			<DisplayId>11</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1173,7 +1141,7 @@
 			<Title>吴军伐越，吴王阖闾战败因伤而亡</Title>
 			<Color>Yellow</Color>
 			<Id>26</Id>
-			<DisplayId>11</DisplayId>
+			<DisplayId>12</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1205,7 +1173,7 @@
 			<Title>吴王夫差败越，越王勾践求和</Title>
 			<Color>Yellow</Color>
 			<Id>27</Id>
-			<DisplayId>12</DisplayId>
+			<DisplayId>13</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1237,7 +1205,7 @@
 			<Title>越灭吴，夫差自杀，勾践成为春秋最后一个霸主</Title>
 			<Color>Yellow</Color>
 			<Id>28</Id>
-			<DisplayId>14</DisplayId>
+			<DisplayId>16</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1269,7 +1237,7 @@
 			<Title>周王册命田和为齐侯，取代姜氏（子牙）齐国</Title>
 			<Color>Yellow</Color>
 			<Id>29</Id>
-			<DisplayId>16</DisplayId>
+			<DisplayId>18</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1301,7 +1269,7 @@
 			<Title>秦孝公任用商鞅，实施变法</Title>
 			<Color>Yellow</Color>
 			<Id>30</Id>
-			<DisplayId>18</DisplayId>
+			<DisplayId>20</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1333,7 +1301,7 @@
 			<Title>齐国田单火牛阵大败燕军，但国力已衰</Title>
 			<Color>Yellow</Color>
 			<Id>31</Id>
-			<DisplayId>22</DisplayId>
+			<DisplayId>24</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1365,7 +1333,7 @@
 			<Title>秦始皇焚书坑儒</Title>
 			<Color>Yellow</Color>
 			<Id>32</Id>
-			<DisplayId>33</DisplayId>
+			<DisplayId>36</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1397,7 +1365,7 @@
 			<Title>陈胜、吴广大泽乡揭竿而起</Title>
 			<Color>Yellow</Color>
 			<Id>33</Id>
-			<DisplayId>34</DisplayId>
+			<DisplayId>37</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1429,7 +1397,7 @@
 			<Title>项羽率楚军大破秦军，秦亡</Title>
 			<Color>Blue</Color>
 			<Id>34</Id>
-			<DisplayId>36</DisplayId>
+			<DisplayId>39</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1461,7 +1429,7 @@
 			<Title>刘邦率军入秦都咸阳</Title>
 			<Color>Yellow</Color>
 			<Id>35</Id>
-			<DisplayId>35</DisplayId>
+			<DisplayId>38</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1493,7 +1461,7 @@
 			<Title>李冰父子修建都江堰</Title>
 			<Color>Yellow</Color>
 			<Id>36</Id>
-			<DisplayId>25</DisplayId>
+			<DisplayId>27</DisplayId>
 			<LockedInPlace>0</LockedInPlace>
 			<Relationships></Relationships>
 			<Values></Values>
@@ -1521,6 +1489,508 @@
 			<Tags></Tags>
 			<ExternalLinks></ExternalLinks>
 		</Event>
+		<Event>
+			<Title>项羽自封为西楚霸王，分封十八路诸侯，刘邦被封为汉王。</Title>
+			<Color>Yellow</Color>
+			<Id>37</Id>
+			<DisplayId>40</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships></Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="month">-6467558400</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>0</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>垓下之战：汉军包围楚军于垓下，项羽突围后于乌江自刎而死。</Title>
+			<Color>Blue</Color>
+			<Id>38</Id>
+			<DisplayId>41</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships></Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-6370272000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>0</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>西汉</Title>
+			<Color>Green</Color>
+			<Id>39</Id>
+			<DisplayId>42</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-6370272000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>211</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>秦朝</Title>
+			<Color>Green</Color>
+			<Id>40</Id>
+			<DisplayId>35</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-6969456000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>15</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>东汉</Title>
+			<Color>Green</Color>
+			<Id>41</Id>
+			<DisplayId>49</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">757382400</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>196</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>汉武帝采儒生董仲舒之议，罢黜百家，表章六经。</Title>
+			<Color>Yellow</Color>
+			<Id>42</Id>
+			<DisplayId>44</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-4225824000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>0</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>张骞出使西域（玉门关、阳关以西的诸多国家和地区）</Title>
+			<Color>Yellow</Color>
+			<Id>43</Id>
+			<DisplayId>43</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-4383504000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>14</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>霍去病出陇西击灭居于河西走廊的匈奴部落，以其地设酒泉郡，后又分割为张掖、敦煌、武威三郡。</Title>
+			<Color>Yellow</Color>
+			<Id>44</Id>
+			<DisplayId>45</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships></Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-3815856000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>0</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>新朝</Title>
+			<Color>Green</Color>
+			<Id>45</Id>
+			<DisplayId>47</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">220838400</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>16</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>王莽篡位孺子婴禅让后自立为帝，改国号为新。</Title>
+			<Color>Blue</Color>
+			<Id>46</Id>
+			<DisplayId>46</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships></Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">220838400</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>0</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>刘秀为汉光武帝，国号仍为汉，史称东汉或后汉。</Title>
+			<Color>Blue</Color>
+			<Id>47</Id>
+			<DisplayId>48</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships></Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">757382400</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>0</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>东周</Title>
+			<Color>Green</Color>
+			<Id>48</Id>
+			<DisplayId>7</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-24282720000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>515</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>春秋</Title>
+			<Color>Light Green</Color>
+			<Id>49</Id>
+			<DisplayId>6</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-24282720000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>295</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
+		<Event>
+			<Title>战国</Title>
+			<Color>Light Green</Color>
+			<Id>50</Id>
+			<DisplayId>15</DisplayId>
+			<LockedInPlace>0</LockedInPlace>
+			<Relationships>
+				<Relationship>
+					<Entity>中国</Entity>
+					<Role>Location</Role>
+					<PercentAllocated>1.000000</PercentAllocated>
+				</Relationship>
+			</Relationships>
+			<Values></Values>
+			<RangeValues>
+				<RangeValue>
+					<Position>
+						<Value Precision="year">-15011136000</Value>
+						<RangeProperty>Date</RangeProperty>
+					</Position>
+					<Span>
+						<Value>
+							<Years>256</Years>
+							<Months>0</Months>
+							<Weeks>0</Weeks>
+							<Days>0</Days>
+							<Hours>0</Hours>
+							<Minutes>0</Minutes>
+							<Seconds>0</Seconds>
+						</Value>
+					</Span>
+					<RangeProperty>Date</RangeProperty>
+					<MinimumZoom>-1.000000</MinimumZoom>
+				</RangeValue>
+			</RangeValues>
+			<Tags></Tags>
+			<ExternalLinks></ExternalLinks>
+		</Event>
 	</Events>
 	<Entities>
 		<Entity>
@@ -1529,7 +1999,7 @@
 			<Notes></Notes>
 			<Color>#8373c0</Color>
 			<Icon>globe</Icon>
-			<SortOrder>2</SortOrder>
+			<SortOrder>1</SortOrder>
 			<EntityType>Place</EntityType>
 		</Entity>
 	</Entities>
@@ -1613,11 +2083,11 @@
 		</DictionaryItem>
 		<DictionaryItem>
 			<key>ScrollPosition</key>
-			<value type="number">-2035</value>
+			<value type="number">-1964</value>
 		</DictionaryItem>
 		<DictionaryItem>
 			<key>ScrollPositionY</key>
-			<value type="number">-53</value>
+			<value type="number">-44</value>
 		</DictionaryItem>
 		<DictionaryItem>
 			<key>UnitScale</key>
